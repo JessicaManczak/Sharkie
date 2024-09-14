@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html translate="no" lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="classes/drawable-objects.class.js"></script>
+    <script src="classes/moveable-objects.class.js"></script>
+    <script src="classes/throwable-object.class.js"></script>
+    <script src="classes/character.class.js"></script>
+    <script src="classes/enemy.class.js"></script>
+    <script src="classes/fish.class.js"></script>
+    <script src="classes/fish-danger.class.js"></script>
+    <script src="classes/jelly-fish.class.js"></script>
+    <script src="classes/jelly-fish-danger.class.js"></script>
+    <script src="classes/light.class.js"></script>
+    <script src="classes/status-bar-health.class.js"></script>
+    <script src="classes/status-bar-poison.class.js"></script>
+    <script src="classes/status-bar-coin.class.js"></script>
+    <script src="classes/collectable-object.class.js"></script>
+    <script src="classes/world.class.js"></script>
+    <script src="classes/background-object.class.js"></script>
+    <script src="classes/coin.class.js"></script>
+    <script src="classes/poison.class.js"></script>
+    <script src="classes/keyboard.class.js"></script>
+    <script src="classes/level.class.js"></script>
+    <script src="classes/endboss.class.js"></script>
+    <script src="levels/level1.js"></script>
+    <script src="js/game.js"></script>
+    <title>Sharkie</title>
+    <link rel="icon" type="image/x-icon" href="img/icons/favicon.png" />
+  </head>
+  <body onload="preloadSounds()">
+    <div id="turnDevice">
+      <img class="turn" src="img/icons/turn_phone.png" />
+    </div>
+    <div class="container" id="container">
+      <canvas id="canvas" width="720" height="480"> </canvas>
+      <div class="screen d_none" id="deadScreen">
+        <div class="menuIngameDiv">
+          <img
+            class="gameOver"
+            src="img/6.Botones/Tittles/Game Over/Recurso 9.png"
+          />
+          <img
+            onclick="tryAgain()"
+            class="tryAgain"
+            src="img/6.Botones/Try again/Recurso 15.png"
+          />
+        </div>
+        <div class="divFooter">
+          <img
+            onclick="backToMenu()"
+            class="returnMenu"
+            src="img/icons/home.png"
+          />
+        </div>
+      </div>
+      <div class="winning d_none" id="winningScreen">
+        <img
+          class="winning_img"
+          src="img/6.Botones/Tittles/You win/Mesa de trabajo 1 - Kopie.png"
+        />
+      </div>
+
+      <div class="menu" id="startScreen">
+        <h1 class="title">Sharkie</h1>
+        <img
+          class="tryAgain"
+          onclick="start()"
+          src="img/6.Botones/Start/3.png"
+        />
+        <div class="menuIcons">
+          <img
+            onclick="showInstructions()"
+            class="menuIcon"
+            src="img/icons/instructions.png"
+          />
+          <img
+            onclick="showStory()"
+            class="menuIcon"
+            src="img/icons/story.png"
+          />
+          <img
+            onclick="showImpressum()"
+            class="menuIcon"
+            src="img/icons/impressum.png"
+          />
+        </div>
+      </div>
+
+      <div class="ingameScreen d_none" id="ingameScreen">
+        <div class="touch_buttons">
+          <img id="upButton" class="touch" src="img/icons/up-arrow.png" />
+          <img id="downButton" class="touch" src="img/icons/down-arrow .png" />
+          <img id="leftButton" class="touch" src="img/icons/left-arrow.png" />
+          <img id="rightButton" class="touch" src="img/icons/right-arrow.png" />
+          <img id="finButton" class="touch" src="img/icons/fish.png" />
+          <img id="bubbleButton" class="touch" src="img/icons/bubbles.png" />
+        </div>
+
+        <div class="sound_fullscreen">
+          <img
+            onclick="toggleSoundOnOff()"
+            id="soundButton"
+            class="ingameIcon"
+            src="img/icons/sound_on.png"
+          />
+        </div>
+      </div>
+
+      <div class="menuDiv d_none" id="menuDiv">
+        <div class="instructions d_none" id="instructionScreen">
+          <div class="instructions_structure">
+            <div class="move">W</div>
+            <div class="move">UP</div>
+          </div>
+          <div class="instructions_structure">
+            <div class="move">A</div>
+            <div class="move">LEFT</div>
+          </div>
+          <div class="instructions_structure">
+            <div class="move">S</div>
+            <div class="move">DOWN</div>
+          </div>
+          <div class="instructions_structure">
+            <div class="move">D</div>
+            <div class="move">RIGHT</div>
+          </div>
+          <div class="instructions_structure">
+            <div class="move">F</div>
+            <div class="move">ATTACK A</div>
+          </div>
+          <div class="instructions_structure">
+            <div class="move">SPACE</div>
+            <div class="move">ATTACK B</div>
+          </div>
+        </div>
+
+        <div class="story d_none" id="story">
+          <div class="story_structure">
+            <p>
+              Sharkie, the brave shark, lived peacefully in a coral reef until
+              the evil orca whale, filled with envy for Sharkie’s friends and
+              his beautiful home, appeared. The orca enchanted pufferfish and
+              jellyfish to defend his dark domain and take over the reef.
+              Sharkie knew he had to save his friends...
+            </p>
+          </div>
+        </div>
+
+        <div class="impressum d_none" id="impressum">
+          <div class="impressum_structure">
+            <h3>Impressum</h3>
+            <h4>Verantwortlich für den Inhalt gemäß § 5 TMG:</h4>
+            <span>Jessica Manczak</span>
+            <span>Rathausstraße 94</span>
+            <span>52477 Alsdorf</span>
+            <span>jessicamanczak@gmx.de</span>
+            <h4>Bilder- Soundquellen:</h4>
+            <ul>
+              <li>Developer Akademie GmbH</li>
+              <li>Pixabay.com</li>
+              <li>Freesound.org</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="divFooter">
+          <img
+            onclick="backToMenu()"
+            class="returnMenu"
+            src="img/icons/home.png"
+          />
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

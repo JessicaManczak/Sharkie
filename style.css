@@ -1,0 +1,467 @@
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0;
+  background: url('img/background-images/shall_water.jpg') no-repeat center
+    center fixed;
+  background-color: #00cbff;
+  /* background-size: cover; */
+}
+
+.screen {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  gap: 15px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.gameOver {
+  height: 35%;
+  width: 80%;
+}
+
+.tryAgain {
+  cursor: pointer;
+  height: 25%;
+  width: 50%;
+}
+
+.fullScreen {
+  cursor: pointer;
+  height: 100px;
+  width: 50%;
+}
+
+.returnMenu {
+  cursor: pointer;
+  height: 100%;
+  width: 10%;
+}
+
+.d_none {
+  display: none !important;
+}
+
+.container {
+  position: absolute;
+  top: 50%;
+  margin: 0;
+  width: 720px;
+  height: 480px;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+}
+
+.menu {
+  font-size: 60px;
+  height: 100%;
+  width: 100%;
+  position: relative;
+  background-image: url('img/icons/sea-7920977_1920.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+}
+
+.title {
+  cursor: default;
+  user-select: none;
+  font-family: 'Baloo 2', cursive;
+  font-size: 80px;
+  font-weight: bold;
+  color: #fcee21;
+  text-shadow: 8px 5px 0px #f6b42b, 10px 6px 8px rgba(0, 0, 0, 0.3);
+  letter-spacing: 5px;
+  display: flex;
+  justify-content: center;
+  margin: 0;
+}
+
+.menuIcon {
+  cursor: pointer;
+  height: 50px;
+  width: 50px;
+  position: relative;
+}
+
+.menuIcons {
+  user-select: none;
+}
+
+.instructions {
+  cursor: default;
+  user-select: none;
+  font-family: 'Baloo 2', cursive;
+  font-weight: bold;
+  font-size: 20px;
+  height: 100%;
+  width: 100%;
+  color: #1b1464;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  gap: 8px;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.instructions_structure {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  width: 50%;
+}
+
+.instructionsMenu {
+  cursor: pointer;
+  height: 15%;
+  width: 10%;
+  position: relative;
+  top: 59px;
+  left: 310px;
+}
+
+.move {
+  background-color: #fcee21;
+  border: solid white 5px;
+  border-radius: 10px;
+  flex: 1;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.winning {
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+
+.winning_img {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+}
+
+.impressum {
+  cursor: default;
+  user-select: none;
+  font-family: 'Baloo 2', cursive;
+  font-size: 16px;
+  height: 100%;
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h3 {
+  margin: 0;
+}
+
+h4 {
+  margin: 20px;
+}
+
+ul {
+  margin: 0;
+}
+
+.impressum_structure {
+  background-color: rgba(243, 243, 243, 0.63);
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: solid 5px white;
+  border-radius: 8px;
+}
+
+.ingameScreen {
+  display: flex;
+  position: relative;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  margin-top: auto;
+}
+
+.ingameIcon {
+  height: 40px;
+  width: 40px;
+}
+
+.story {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  cursor: default;
+  user-select: none;
+  font-family: 'Baloo 2', cursive;
+  font-size: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.story_structure {
+  background-color: #fcee21;
+  color: #1b1464;
+  font-weight: bold;
+  border: solid white 5px;
+  border-radius: 10px;
+  width: 60%;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.backToMenu {
+  height: 15%;
+  width: 10%;
+  cursor: pointer;
+  position: relative;
+  top: 57px;
+  left: 310px;
+}
+
+.touch {
+  height: 40px;
+  width: 40px;
+  cursor: pointer;
+}
+
+.touch_buttons {
+  display: none;
+  padding: 0px 0px 0px 5px;
+  gap: 25px;
+}
+
+.sound_fullscreen {
+  cursor: pointer;
+  display: flex;
+  position: relative;
+  gap: 3px;
+}
+
+#turnDevice {
+  display: none;
+  height: 100vh;
+  width: 100vw;
+}
+
+.turn {
+  height: 95%;
+  width: 100%;
+}
+
+canvas {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.menuDiv {
+  cursor: default;
+  user-select: none;
+  background-image: url('img/icons/sea-7920977_1920.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.menuIngameDiv {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.divFooter {
+  width: 100%;
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+@media only screen and (max-width: 1024px) and (orientation: portrait) {
+  #turnDevice {
+    background-color: rgba(243, 243, 243, 0.63);
+    display: block;
+    z-index: 2;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .container {
+    width: 100%;
+    height: 66vw;
+  }
+
+  .touch_buttons {
+    display: flex;
+  }
+
+  canvas {
+    width: 100%;
+  }
+
+  .ingameScreen {
+    flex-direction: row;
+  }
+}
+
+@media (max-width: 600px) {
+  .story {
+    font-size: 16px;
+  }
+
+  .impressum {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 520px) {
+  body {
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+
+  .tryAgain {
+    height: 70px;
+  }
+
+  .instructions {
+    font-size: 16px;
+    .move {
+      border: solid white 3px;
+    }
+  }
+
+  .story {
+    font-size: 12px;
+  }
+
+  .impressum {
+    font-size: 10px;
+    .impressum_structure {
+      margin-top: 10px;
+    }
+  }
+}
+
+@media (max-width: 450px) {
+  .touch {
+    height: 20px;
+    width: 20px;
+  }
+
+  .ingameIcon {
+    height: 20px;
+    width: 20px;
+  }
+
+  .menuIcon {
+    height: 35px;
+    width: 35px;
+  }
+
+  .title {
+    font-size: 55px;
+  }
+
+  .instructions {
+    font-size: 10px;
+    .move {
+      border: solid white 2px;
+    }
+  }
+
+  .story {
+    font-size: 10px;
+  }
+
+  .impressum {
+    font-size: 10px;
+    .impressum_structure {
+      margin-top: 0px;
+    }
+    h4 {
+      margin: 8px;
+    }
+  }
+}
+
+@media only screen and (max-height: 720px) {
+  canvas {
+    height: 100vh;
+    width: 100vw;
+  }
+
+  .container {
+    height: 100vh;
+    width: 100vw;
+  }
+
+  .touch_buttons {
+    display: flex;
+  }
+
+  .ingameScreen {
+    flex-direction: row;
+  }
+}
+
+@media only screen and (max-height: 720px) {
+  .impressum {
+    font-size: 14px;
+    .impressum_structure {
+      margin-top: 10px;
+    }
+  }
+}
+
+@media (min-width: 1920px) {
+  body {
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+}
+
+@media (min-height: 1080px) {
+  body {
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+}
